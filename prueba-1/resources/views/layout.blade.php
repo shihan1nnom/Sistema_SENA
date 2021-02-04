@@ -26,7 +26,7 @@
 
   </head>
   <body>
-    <main class="container" style="padding-left: 30px; padding-right: 30px; margin-top: 40px">
+    <main class="container" style="padding-left: 30px; padding-right: 30px; margin-top: 30px">
       @yield('contenido')
     </main>
   </body>
