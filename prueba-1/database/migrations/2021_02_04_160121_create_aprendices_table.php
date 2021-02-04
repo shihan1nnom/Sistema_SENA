@@ -20,7 +20,7 @@ class CreateAprendicesTable extends Migration
             $table->string('documento', 45);
             $table->string('tipo_documento', 45);
             $table->string('correo', 45);
-            $table->date('fecha_nacimiento', 45);
+            $table->date('fecha_nacimiento');
             $table->string('genero', 45);
             $table->unsignedBigInteger('ficha_id');
             $table->foreign('ficha_id')->references('id')->on('fichas');
