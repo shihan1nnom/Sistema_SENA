@@ -26,8 +26,12 @@
 
   </head>
   <body>
-    <main class="container" style="padding-left: 30px; padding-right: 30px; margin-top: 30px">
+    <main class="container" style="padding-left: 30px; padding-right: 30px; margin-top: 30px;">
       @yield('contenido')
+      <footer style="text-align: center; margin-top: 50px; margin-bottom: 30px; float: bottom">
+          <span style="color: white">2021 - Creado por Shihan</span>
+      </footer>
     </main>
+
   </body>
 </html>
