@@ -26,6 +26,11 @@
 
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light" style="opacity: 0.6">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{route('home')}}" style="margin-left: 20px">SENA</a>
+      </div>
+    </nav>
     <main class="container" style="padding-left: 30px; padding-right: 30px; margin-top: 30px;">
       @yield('contenido')
       <footer style="text-align: center; margin-top: 50px; margin-bottom: 30px; float: bottom">

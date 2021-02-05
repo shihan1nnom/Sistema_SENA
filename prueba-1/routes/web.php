@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProgramasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*Vista principal*/
-Route::view('/', 'home.acercade');
+Route::view('/', 'home.acercade')->name('home');
+
+/*Vista crud programas de formacion*/
+Route::get('programas_formacion', [ProgramasController::class, 'index'])->name('programas_formacion.index');
+Route::get('programas_formacion/crear',[ProgramasController::class,'crear'])->name('programas_formacion.crear');
+Route::post('programas_formacion', [ProgramasController::class, 'guardar'])->name('programas_formacion.guardar');

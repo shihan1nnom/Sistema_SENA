@@ -6,7 +6,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner" style="border-radius: 30px 100px;">
             <div class="carousel-item active">
-              <a href="#">
+              <a href="{{url('programas_formacion')}}">
                 <img src="{{asset('contenido/imagenes/programas.jpg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption" style="color: black; background: white; border-radius: 20px">
                   <h5>Programas de formacion</h5>
