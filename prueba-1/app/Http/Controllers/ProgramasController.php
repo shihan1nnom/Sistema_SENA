@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Programa_Formacion;
+use Illuminate\Support\Facades\DB;
 
 class ProgramasController extends Controller
 {
   public function index(){
-      $programas = Programa_Formacion::all();
+      $programas = Programa_Formacion::Paginate(5);
       return view('programas_formacion.index', compact('programas'));
   }
 
@@ -18,6 +19,16 @@ class ProgramasController extends Controller
 
     public function guardar(Request $request){
         $programa = Programa_Formacion::create($request->all());
+        return redirect()->route('programas_formacion.index');
+    }
+
+    public function editar($id){
+        $programa = Programa_Formacion::find($id);
+        return view('programas_formacion.editar', compact('programa'));
+    }
+
+    public function actualizar(Request $request, $id){
+        $programa = Programa_Formacion::find($id)->update($request->all());
         return redirect()->route('programas_formacion.index');
     }
 }
