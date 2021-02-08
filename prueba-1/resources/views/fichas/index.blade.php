@@ -52,6 +52,20 @@
               </td>
             </tr>
           @endforeach
+          <tr>
+            <th>FICHAS DESACTIVADAS</th>
+          </tr>
+          @foreach($fichas_desactive as $ficha)
+           <tr>
+             <td>{{$ficha->nombre}}</td>
+             <td>{{$ficha->jornada}}</td>
+             <td>{{$ficha->aula}}</td>
+             <td>{{$ficha->programa_id}}</td>
+             <td>
+               
+             </td>
+           </tr>
+         @endforeach
         </tbody>
       </table>
     </p>

@@ -10,10 +10,11 @@ class FichaController extends Controller
 {
   public function index(Request $request){
       $buscar = trim($request->get('buscar'));
+      $fichas_desactive = Ficha::onlyTrashed()->get();
       $fichas = Ficha::select('*')
         ->where('jornada', 'LIKE', '%'.$buscar.'%')
         ->get();
-      return view('fichas.index', compact('fichas', 'buscar'));
+      return view('fichas.index', compact('fichas', 'buscar', 'fichas_desactive'));
   }
 
   public function crear(){
