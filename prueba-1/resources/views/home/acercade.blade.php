@@ -15,7 +15,7 @@
               </a>
             </div>
             <div class="carousel-item">
-              <a href="#">
+              <a href="{{url('fichas')}}">
                 <img src="{{asset('contenido/imagenes/ficha.jpg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption" style="color: black; background: white; border-radius: 20px">
                   <h5>Fichas</h5>

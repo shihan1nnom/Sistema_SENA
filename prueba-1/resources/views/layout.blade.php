@@ -7,6 +7,8 @@
 
     <!-- Bootstrap CSS y JS-->
     <link rel="stylesheet" href="{{asset('contenido/css/bootstrap.min.css')}}">
+    <script src="{{asset('plugins/js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{asset('plugins/js/popper.min.js')}}"></script>
     <script src="{{asset('plugins/js/bootstrap.bundle.min.js')}}"></script>
 
     <title>@yield('titulo') | SENA</title>
@@ -42,8 +44,7 @@
 </html>
 
 <script>
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
   })
 </script>

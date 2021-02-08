@@ -14,21 +14,21 @@ class ProgramasController extends Controller
   }
 
   public function crear(){
-        return view('programas_formacion.crear');
-    }
+      return view('programas_formacion.crear');
+  }
 
-    public function guardar(Request $request){
-        $programa = Programa_Formacion::create($request->all());
-        return redirect()->route('programas_formacion.index');
-    }
+  public function guardar(Request $request){
+      $programa = Programa_Formacion::create($request->all());
+      return redirect()->route('programas_formacion.index');
+  }
 
-    public function editar($id){
-        $programa = Programa_Formacion::find($id);
-        return view('programas_formacion.editar', compact('programa'));
-    }
+  public function editar($id){
+      $programa = Programa_Formacion::find($id);
+      return view('programas_formacion.editar', compact('programa'));
+  }
 
-    public function actualizar(Request $request, $id){
-        $programa = Programa_Formacion::find($id)->update($request->all());
-        return redirect()->route('programas_formacion.index');
-    }
+  public function actualizar(Request $request, $id){
+      $programa = Programa_Formacion::find($id)->update($request->all());
+      return redirect()->route('programas_formacion.index');
+  }
 }
