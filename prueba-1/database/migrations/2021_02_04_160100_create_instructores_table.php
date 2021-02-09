@@ -16,7 +16,7 @@ class CreateInstructoresTable extends Migration
         Schema::create('instructores', function (Blueprint $table) {
             $table->id();
             $table->string('nombres', 45);
-            $table->string('apellidos ', 45);
+            $table->string('apellidos', 45);
             $table->string('documento', 45);
             $table->string('fotografia', 45);
             $table->unsignedBigInteger('ficha_id');

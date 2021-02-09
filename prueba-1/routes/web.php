@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramasController;
 use App\Http\Controllers\FichaController;
+use App\Http\Controllers\InstructorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,12 @@ Route::post('fichas', [FichaController::class, 'guardar'])->name('fichas.guardar
 Route::get('fichas/editar/{id}', [FichaController::class, 'editar'])->name('fichas.editar');
 Route::put('fichas/{id}', [FichaController::class, 'actualizar'])->name('fichas.actualizar');
 Route::delete('fichas/{id}', [FichaController::class, 'desactivar'])->name('fichas.desactivar');
+
+/*Vista crud instructores*/
+Route::get('instructores', [InstructorController::class, 'index'])->name('instructores.index');
+Route::get('instructores/crear',[InstructorController::class,'crear'])->name('instructores.crear');
+Route::post('instructores', [InstructorController::class, 'guardar'])->name('instructores.guardar');
+
+Route::get('instructores/editar/{id}', [InstructorController::class, 'editar'])->name('instructores.editar');
+Route::put('instructores/{id}', [InstructorController::class, 'actualizar'])->name('instructores.actualizar');
+Route::delete('instructores/{id}', [InstructorController::class, 'desactivar'])->name('instructores.desactivar');
