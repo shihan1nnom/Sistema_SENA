@@ -1,12 +1,12 @@
 @extends('layout')
-@section('titulo', 'Crear - Instructor')
+@section('titulo', 'Crear - Aprendiz')
 
 @section('contenido')
 <div class="card" style="opacity:0.7">
 <div class="card-body">
-  <h5 class="card-title">Crear Instructor</h5>
+  <h5 class="card-title">Crear Aprendiz</h5>
   <p class="card-text">
-    <form action="{{route('instructores.guardar')}}" method="post">
+    <form action="{{route('aprendices.guardar')}}" method="post">
       @csrf
       <div class="mb-3">
         <label for="nombres" class="form-label">Nombres:</label>
@@ -32,20 +32,47 @@
             <br>
         @endif
       </div>
-      <!--
       <div class="mb-3">
-        <label for="fotografia" class="form-label">Fotografia:</label>
-        <input type="text" class="form-control" id="fotografia" name="fotografia">
-      </div>
-      -->
-      <div class="mb-3">
-        <label for="fotografia" class="form-label">Fotografia:</label>
-        <input class="form-control" type="file" id="fotografia" name="fotografia">
-        @if($errors->has('fotografia'))
-            <label for="" style="color:red;">{{ $errors->first('fotografia') }}</label>
+        <label for="tipo_documento" class="form-label">Tipo de documento:</label>
+        <select name="tipo_documento" id="tipo_documento" class="form-control">
+            <option value="">Seleccionar...</option>
+            <option value="1">Cedula de ciudadania</option>
+            <option value="2">Tarjeta de identidad</option>
+            <option value="3">Pasaporte</option>
+        </select>
+        @if($errors->has('tipo_documento'))
+            <label for="" style="color:red;">{{ $errors->first('tipo_documento') }}</label>
             <br>
         @endif
       </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo:</label>
+        <input type="text" class="form-control" id="correo" name="correo">
+        @if($errors->has('correo'))
+            <label for="" style="color:red;">{{ $errors->first('correo') }}</label>
+            <br>
+        @endif
+      </div>
+      <div class="mb-3">
+        <label for="fecha_nacimiento" class="form-label">Fecha Nacimiento:</label>
+        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+        @if($errors->has('fecha_nacimiento'))
+            <label for="" style="color:red;">{{ $errors->first('fecha_nacimiento') }}</label>
+            <br>
+        @endif
+      </div>
+      <div class="mb-3">
+        <label for="genero" class="form-label">Genero:</label>
+        <select name="genero" id="genero" class="form-control">
+            <option value="">Seleccionar...</option>
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+            <option value="3">Otro</option>
+        </select>
+        @if($errors->has('genero'))
+            <label for="" style="color:red;">{{ $errors->first('genero') }}</label>
+            <br>
+        @endif
       <div class="mn-3">
           <label for="ficha_id" class="form-label">Ficha:</label>
           <select name="ficha_id" id="ficha_id" class="form-control">
@@ -66,7 +93,7 @@
           </svg>
           <span style="margin-left: 20px">Guardar</span>
         </button>
-        <a class="btn btn-outline-dark position-absolute bottom-0 end-0" href="{{route('fichas.index')}}" style="margin-bottom: 25px; margin-right: 15px; border-radius: 5px 15px">Cancelar</a>
+        <a class="btn btn-outline-dark position-absolute bottom-0 end-0" href="{{route('aprendices.index')}}" style="margin-bottom: 25px; margin-right: 15px; border-radius: 5px 15px">Cancelar</a>
       </div>
 
     </form>

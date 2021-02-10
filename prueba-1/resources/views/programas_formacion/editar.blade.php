@@ -12,14 +12,26 @@
       <div class="mb-3">
         <label for="codigo" class="form-label">Codigo:</label>
         <input type="text" class="form-control" id="codigo" name="codigo" value="{{$programa->codigo}}">
+        @if($errors->has('codigo'))
+            <label for="" style="color:red;">{{ $errors->first('codigo') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del programa:</label>
         <input type="text" class="form-control" id="nombre" name="nombre" value="{{$programa->nombre}}">
+        @if($errors->has('nombre'))
+            <label for="" style="color:red;">{{ $errors->first('nombre') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <label for="siglas" class="form-label">Siglas:</label>
         <input type="text" class="form-control text-uppercase" id="siglas" name="siglas" value="{{$programa->siglas}}">
+        @if($errors->has('siglas'))
+            <label for="" style="color:red;">{{ $errors->first('siglas') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <button class="btn btn-warning" type="submit" style="margin-top: 40px; border-radius: 5px 15px">

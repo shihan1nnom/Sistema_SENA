@@ -23,6 +23,12 @@ class FichaController extends Controller
   }
 
   public function guardar(Request $request){
+      $validar_datos = $request->validate([
+        'nombre' => 'required|max:45',
+        'jornada' => 'required|max:45',
+        'aula' => 'required|max:10',
+        'programa_id' => 'required',
+      ]);
       $ficha = Ficha::create($request->all());
       return redirect()->route('fichas.index');
   }
@@ -34,6 +40,12 @@ class FichaController extends Controller
   }
 
   public function actualizar(Request $request, $id){
+      $validar_datos = $request->validate([
+        'nombre' => 'required|max:45',
+        'jornada' => 'required|max:45',
+        'aula' => 'required|max:10',
+        'programa_id' => 'required',
+      ]);
       $ficha = Ficha::find($id)->update($request->all());
       return redirect()->route('fichas.index');
   }

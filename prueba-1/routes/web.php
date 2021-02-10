@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramasController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\AprendizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,12 @@ Route::post('instructores', [InstructorController::class, 'guardar'])->name('ins
 Route::get('instructores/editar/{id}', [InstructorController::class, 'editar'])->name('instructores.editar');
 Route::put('instructores/{id}', [InstructorController::class, 'actualizar'])->name('instructores.actualizar');
 Route::delete('instructores/{id}', [InstructorController::class, 'desactivar'])->name('instructores.desactivar');
+
+/*Vista crud aprendices*/
+Route::get('aprendices', [AprendizController::class, 'index'])->name('aprendices.index');
+Route::get('aprendices/crear',[AprendizController::class,'crear'])->name('aprendices.crear');
+Route::post('aprendices', [AprendizController::class, 'guardar'])->name('aprendices.guardar');
+
+Route::get('aprendices/editar/{id}', [AprendizController::class, 'editar'])->name('aprendices.editar');
+Route::put('aprendices/{id}', [AprendizController::class, 'actualizar'])->name('aprendices.actualizar');
+Route::delete('aprendices/{id}', [AprendizController::class, 'desactivar'])->name('aprendices.desactivar');

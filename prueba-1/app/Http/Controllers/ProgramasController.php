@@ -18,6 +18,11 @@ class ProgramasController extends Controller
   }
 
   public function guardar(Request $request){
+      $validar_datos = $request->validate([
+        'codigo' => 'required|max:45',
+        'nombre' => 'required|max:45',
+        'siglas' => 'required|max:10',
+      ]);
       $programa = Programa_Formacion::create($request->all());
       return redirect()->route('programas_formacion.index');
   }
@@ -28,6 +33,11 @@ class ProgramasController extends Controller
   }
 
   public function actualizar(Request $request, $id){
+      $validar_datos = $request->validate([
+        'codigo' => 'required|max:45',
+        'nombre' => 'required|max:45',
+        'siglas' => 'required|max:10',
+      ]);
       $programa = Programa_Formacion::find($id)->update($request->all());
       return redirect()->route('programas_formacion.index');
   }

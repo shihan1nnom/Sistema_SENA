@@ -33,7 +33,7 @@
               </a>
             </div>
             <div class="carousel-item">
-              <a href="#">
+              <a href="{{url('aprendices')}}">
                 <img src="{{asset('contenido/imagenes/aprendiz.jpg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption" style="color: black; background: white; border-radius: 20px">
                   <h5>Aprendices</h5>

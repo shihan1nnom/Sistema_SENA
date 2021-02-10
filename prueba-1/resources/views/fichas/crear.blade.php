@@ -9,8 +9,12 @@
     <form action="{{route('fichas.guardar')}}" method="post">
       @csrf
       <div class="mb-3">
-        <label for="codigo" class="form-label">Nombre:</label>
+        <label for="nombre" class="form-label">Nombre:</label>
         <input type="text" class="form-control" id="nombre" name="nombre">
+        @if($errors->has('nombre'))
+            <label for="" style="color:red;">{{ $errors->first('nombre') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <label for="nombre" class="form-label">Jornada:</label>
@@ -20,19 +24,31 @@
             <option value="2">Nocturno</option>
             <option value="3">Fines de semana</option>
         </select>
+        @if($errors->has('jornada'))
+            <label for="" style="color:red;">{{ $errors->first('jornada') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
-        <label for="siglas" class="form-label">Aula:</label>
+        <label for="aula" class="form-label">Aula:</label>
         <input type="text" class="form-control" id="aula" name="aula">
+        @if($errors->has('aula'))
+            <label for="" style="color:red;">{{ $errors->first('aula') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mn-3">
-          <label for="conductor_id" class="form-label">Programa de formacion:</label>
+          <label for="programa_id" class="form-label">Programa de formacion:</label>
           <select name="programa_id" id="programa_id" class="form-control">
               <option value="">Seleccionar...</option>
               @foreach($programas as $programa)
                   <option value="{{$programa->id}}">{{$programa->nombre}}</option>
               @endforeach
           </select>
+          @if($errors->has('programa_id'))
+              <label for="" style="color:red;">{{ $errors->first('programa_id') }}</label>
+              <br>
+          @endif
       </div>
       <div class="mb-3">
         <button class="btn btn-warning" type="submit" style="margin-top: 40px; border-radius: 5px 15px">

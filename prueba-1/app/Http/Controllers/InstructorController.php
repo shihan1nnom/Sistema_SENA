@@ -19,6 +19,13 @@ class InstructorController extends Controller
     }
 
     public function guardar(Request $request){
+        $validar_datos = $request->validate([
+          'nombres' => 'required|max:45',
+          'apellidos' => 'required|max:45',
+          'documento' => 'required|max:45',
+          'fotografia' => 'required|max:45',
+          'ficha_id' => 'required',
+        ]);
         $instructor = Intructor::create($request->all());
         return redirect()->route('instructores.index');
     }
@@ -30,6 +37,13 @@ class InstructorController extends Controller
     }
 
     public function actualizar(Request $request, $id){
+        $validar_datos = $request->validate([
+          'nombres' => 'required|max:45',
+          'apellidos' => 'required|max:45',
+          'documento' => 'required|max:45',
+          'fotografia' => 'required|max:45',
+          'ficha_id' => 'required',
+        ]);
         $instrcutor = Intructor::find($id)->update($request->all());
         return redirect()->route('instructores.index');
     }

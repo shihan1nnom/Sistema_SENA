@@ -12,14 +12,26 @@
       <div class="mb-3">
         <label for="nombres" class="form-label">Nombres:</label>
         <input type="text" class="form-control" id="nombres" name="nombres" value="{{$instructor->nombres}}">
+        @if($errors->has('nombres'))
+            <label for="" style="color:red;">{{ $errors->first('nombres') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <label for="apellidos" class="form-label">Apellidos:</label>
         <input type="text" class="form-control" id="apellidos" name="apellidos" value="{{$instructor->apellidos}}">
+        @if($errors->has('apellidos'))
+            <label for="" style="color:red;">{{ $errors->first('apellidos') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mb-3">
         <label for="documento" class="form-label">Documento:</label>
         <input type="text" class="form-control" id="documento" name="documento" value="{{$instructor->documento}}">
+        @if($errors->has('documento'))
+            <label for="" style="color:red;">{{ $errors->first('documento') }}</label>
+            <br>
+        @endif
       </div>
       <!--
       <div class="mb-3">
@@ -30,6 +42,10 @@
       <div class="mb-3">
         <label for="fotografia" class="form-label">Fotografia:</label>
         <input class="form-control" type="file" id="fotografia" name="fotografia" value="{{$instructor->fotografia}}">
+        @if($errors->has('fotografia'))
+            <label for="" style="color:red;">{{ $errors->first('fotografia') }}</label>
+            <br>
+        @endif
       </div>
       <div class="mn-3">
           <label for="ficha_id" class="form-label">Ficha:</label>
@@ -39,6 +55,10 @@
                   <option value="{{$ficha->id}}">{{$ficha->nombre}}</option>
               @endforeach
           </select>
+          @if($errors->has('ficha_id'))
+              <label for="" style="color:red;">{{ $errors->first('ficha_id') }}</label>
+              <br>
+          @endif
       </div>
       <div class="mb-3">
         <button class="btn btn-warning" type="submit" style="margin-top: 40px; border-radius: 5px 15px">
