@@ -9,8 +9,12 @@ use App\Models\Ficha;
 class InstructorController extends Controller
 {
     public function index(){
+        $inner_join = Ficha::join('aprendices', 'fichas.id' , '=', 'aprendices.ficha_id')
+            ->select('*')
+            ->get()
+            ->first();
         $instructores = Intructor::Paginate(5);
-        return view('instructores.index', compact('instructores'));
+        return view('instructores.index', compact('instructores', 'inner_join'));
     }
 
     public function crear(){

@@ -33,7 +33,7 @@
               <td>{{$ficha->nombre}}</td>
               <td>{{$ficha->jornada}}</td>
               <td>{{$ficha->aula}}</td>
-              <td>{{$ficha->programa_id}}</td>
+              <td>{{$inner_join->codigo}}</td>
               <td>
                 <form action="{{route('fichas.desactivar', $ficha->id)}}" method="post">
                   @csrf

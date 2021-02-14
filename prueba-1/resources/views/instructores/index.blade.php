@@ -26,7 +26,7 @@
               <td>{{$instructor->apellidos}}</td>
               <td>{{$instructor->documento}}</td>
               <td>{{$instructor->fotografia}}</td>
-              <td>{{$instructor->ficha_id}}</td>
+              <td>{{$inner_join->nombre}}</td>
               <td>
                 <form action="{{route('instructores.desactivar', $instructor->id)}}" method="post">
                   @csrf

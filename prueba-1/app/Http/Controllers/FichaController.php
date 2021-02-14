@@ -10,11 +10,15 @@ class FichaController extends Controller
 {
   public function index(Request $request){
       $buscar = trim($request->get('buscar'));
+      $inner_join = Programa_Formacion::join('fichas', 'programas_formacion.id' , '=', 'fichas.programa_id')
+            ->select('*')
+            ->get()
+            ->first();
       $fichas_desactive = Ficha::onlyTrashed()->get();
       $fichas = Ficha::select('*')
         ->where('jornada', 'LIKE', '%'.$buscar.'%')
         ->get();
-      return view('fichas.index', compact('fichas', 'buscar', 'fichas_desactive'));
+      return view('fichas.index', compact('fichas', 'buscar', 'fichas_desactive', 'inner_join'));
   }
 
   public function crear(){

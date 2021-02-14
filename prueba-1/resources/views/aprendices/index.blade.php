@@ -32,7 +32,7 @@
               <td>{{$aprendiz->correo}}</td>
               <td>{{$aprendiz->fecha_nacimiento}}</td>
               <td>{{$aprendiz->genero}}</td>
-              <td>{{$aprendiz->ficha_id}}</td>
+              <td>{{$inner_join->nombre}}</td>
               <td>
                 <form action="{{route('aprendices.desactivar', $aprendiz->id)}}" method="post">
                   @csrf
