@@ -22,7 +22,7 @@
             <tr>
               <td>{{$programa->codigo}}</td>
               <td>{{$programa->nombre}}</td>
-              <td>{{$programa->siglas}}</td>
+              <td class="text-uppercase">{{$programa->siglas}}</td>
               <td>
                 <a class="btn btn-link" href="{{route('programas_formacion.editar', $programa->id)}}" style="margin-top: -8px" data-toggle="tooltip" data-placement="right" title="Editar">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
